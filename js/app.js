@@ -150,7 +150,7 @@ function update() {
   }
   if (count % diff === 0) {
     fallingObjs.push({
-      x: Math.floor(Math.random() * 940) + 20,
+      x: Math.floor(Math.random() * 980) - 10,
       y: 0,
       item: food[Math.floor(Math.random() * 6)]
     })
