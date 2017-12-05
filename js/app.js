@@ -44,7 +44,7 @@ let player = {
   x: 100,
   y: 588,
   velX: 0,
-  maxSpd: 2,
+  maxSpd: 3,
   stack: []
 };
 let count = 0;
