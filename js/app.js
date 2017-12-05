@@ -83,7 +83,7 @@ function update() {
       } else {
         ctx.drawImage(itemEating, player.x - 4, player.y, 32, 32)
       }
-      eatPercent += 0.02;
+      eatPercent += 0.015;
       if (eatPercent >= 1) {
         itemEating = null;
         eatPercent = 0;
@@ -159,8 +159,8 @@ function update() {
   fallingObjs.forEach(obj => {
     ctx.drawImage(obj.item, obj.x, obj.y, 32, 32);
     obj.y += 5;
-    if (obj.x < player.x + 32 &&
-      obj.x + 24 > player.x &&
+    if (obj.x < player.x + 36 &&
+      obj.x + 4 > player.x &&
       obj.y < player.y + 32 &&
       obj.y + 24 > player.y - player.stack.length * 20) {
       fallingObjs.splice(fallingObjs.indexOf(obj), 1);
