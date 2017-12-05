@@ -104,13 +104,13 @@ function update() {
 
     if (keys[39] && !keys[32] && playing) {
       // right arrow
-      if (player.velX < player.maxSpd) {
+      if (player.velX < player.maxSpd && player.x < 896) {
         player.velX++;
       }
     }
     if (keys[37] && !keys[32] && playing) {
       // left arrow
-      if (player.velX > -player.maxSpd) {
+      if (player.velX > -player.maxSpd  && player.x > 0) {
         player.velX--;
       }
     }
