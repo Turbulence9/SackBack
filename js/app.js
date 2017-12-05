@@ -33,6 +33,7 @@ sound.loop = true;
 sound.play();
 let food = [apple, banana, orange, peach, pear, pineapple];
 let keys = [];
+let diff = 5;
 let dieCount = 0;
 let friction = 0.8;
 let fallingObjs = [];
@@ -62,7 +63,6 @@ function update() {
   }
   let scoreArr = (score + "").split('');
   for (let i = 0; i < scoreArr.length; i++) {
-    console.log(player.stack.length);
     ctx.drawImage(numbers, 0 + 44 * parseInt(scoreArr[i]), 0, 44, 86, 5 + 44 * i, 5, 44, 86);
   }
 
@@ -136,8 +136,19 @@ function update() {
   }
   count++;
 
-
-  if (count % 5 === 0) {
+  if(count > 500) {
+    diff = 4;
+  }
+  if(count > 2000) {
+    diff = 3;
+  }
+  if(count > 5000) {
+    diff = 2;
+  }
+  if(count > 10000) {
+    diff = 1;
+  }
+  if (count % diff === 0) {
     fallingObjs.push({
       x: Math.floor(Math.random() * 940) + 20,
       y: 0,
